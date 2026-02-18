@@ -118,6 +118,25 @@ void Huffman::decompress(const std::string& inputFile, const std::string& output
     
     std::ofstream outFile(outputFile, std::ios::binary);
     char byte;
+
+    while (inFile.get(byte)) {
+        std::bitset<8> bits(byte);
+        for (int i = 7; i >= 0; --i) {
+            if (totalChars == 0) break;
+            
+            if (bits[i] == 0) {
+                curr = curr->left;
+            } else {
+                curr = curr->right;
+            }
+
+            if (!curr->left && !curr->right) {
+                outFile.put(curr->ch);
+                curr = root;
+                totalChars--;
+            }
+        }
+    }
     
     inFile.close();
     outFile.close();
