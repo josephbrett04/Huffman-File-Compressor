@@ -13,3 +13,9 @@ struct Node {
     Node(char character, int frequency, Node* l = nullptr, Node* r = nullptr)
         : ch(character), freq(frequency), left(l), right(r) {}
 };
+
+struct Compare {
+    bool operator()(Node* l, Node* r) {
+        return l->freq > r->freq;
+    }
+};
