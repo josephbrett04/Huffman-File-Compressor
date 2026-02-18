@@ -74,4 +74,15 @@ void Huffman::compress(const std::string& inputFile, const std::string& outputFi
     inFile.clear();
     inFile.seekg(0);
 
+    freqMap = tempFreq;
+    root = buildTree(freqMap);
+    generateCodes(root, "");
+
+    std::ofstream outFile(outputFile, std::ios::binary);
+    writeHeader(outFile);
+
+    char buffer = 0;
+    int bitCount = 0;
+
+
 }
