@@ -106,3 +106,19 @@ void Huffman::compress(const std::string& inputFile, const std::string& outputFi
     inFile.close();
     outFile.close();
 }
+
+void Huffman::decompress(const std::string& inputFile, const std::string& outputFile) {
+    std::ifstream inFile(inputFile, std::ios::binary);
+    readHeader(inFile);
+    
+    root = buildTree(freqMap);
+    
+    int totalChars = root->freq;
+    Node* curr = root;
+    
+    std::ofstream outFile(outputFile, std::ios::binary);
+    char byte;
+    
+    inFile.close();
+    outFile.close();
+}
