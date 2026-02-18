@@ -32,4 +32,18 @@ Create a simple text file to test the compression. You can use any text file, or
 echo "This is a test string I Just made." > input.txt
 ```
 
+### 3. Start Compression
+Run the program with the "-c" flag. This reads your text file and creates a compressed binary file.
 
+```bash
+
+./huffman -c input.txt compressed.bin
+```
+
+### 4. Start Decompression
+Run the program with the "-d" flag to reverse the process. This takes the binary file and reconstructs the original text.
+
+```bash
+
+./huffman -d compressed.bin restored.txt
+```
