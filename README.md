@@ -23,9 +23,12 @@ Open your terminal in the project directory and run the following command to lin
 
 g++ main.cpp Huffman.cpp -o huffman -std=c++17
 
+```bash
+
 ### 2. Make Test File
 Create a simple text file to test the compression. You can use any text file, or generate one using the command line:
 
 ```bash
 
 echo "This is a test string I Just made." > input.txt
+
