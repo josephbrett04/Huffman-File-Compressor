@@ -4,6 +4,7 @@ A high-performance file compression tool utilizing Huffman Code.
 
 ## Technical Implementation
 
+Basic C++ application meant for use on Linux devices.
 This application implements the standard Huffman coding algorithm to achieve lossless compression through the following:
 
 1.  The program reads the input file byte-by-byte to calculate the frequency of every character using a `std::map`.
@@ -16,32 +17,37 @@ This application implements the standard Huffman coding algorithm to achieve los
 
 Follow these steps to compile and test the application on your local machine.
 
-Compile the Source Code
+# Compile the Source Code
 Open your terminal in the project directory and run the following command to link the files and create the executable.
 ```bash
 
 g++ main.cpp Huffman.cpp -o huffman -std=c++17
 ```
 
-Make Test File
+# Make Test File
 Create a simple text file to test the compression. You can use any text file, or generate one using the command line:
 ```bash
 
 echo "This is a test string I Just made." > input.txt
 ```
 
-Start Compression
+# Start Compression
 Run the program with the "-c" flag. This reads your text file and creates a compressed binary file.
 ```bash
 
 ./huffman -c input.txt compressed.bin
 ```
 
-Start Decompression
+# Start Decompression
 Run the program with the "-d" flag to reverse the process. This takes the binary file and reconstructs the original text.
-
 ```bash
 
 ./huffman -d compressed.bin restored.txt
 ```
 
+# Verify the Results
+Check that the original file (input.txt) and the restored file (restored.txt) are exactly the same. Nothing should be printed out
+```bash
+
+.diff input.txt restored.txt
+```
