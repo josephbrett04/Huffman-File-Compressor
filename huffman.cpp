@@ -63,3 +63,15 @@ void Huffman::readHeader(std::ifstream& inFile) {
         freqMap[key] = val;
     }
 }
+
+void Huffman::compress(const std::string& inputFile, const std::string& outputFile) {
+    std::ifstream inFile(inputFile, std::ios::binary);
+    std::map<char, int> tempFreq;
+    char ch;
+    while (inFile.get(ch)) {
+        tempFreq[ch]++;
+    }
+    inFile.clear();
+    inFile.seekg(0);
+
+}
