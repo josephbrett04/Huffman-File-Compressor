@@ -16,34 +16,32 @@ This application implements the standard Huffman coding algorithm to achieve los
 
 Follow these steps to compile and test the application on your local machine.
 
-### 1. Compile the Source Code
+Compile the Source Code
 Open your terminal in the project directory and run the following command to link the files and create the executable.
-
 ```bash
 
 g++ main.cpp Huffman.cpp -o huffman -std=c++17
 ```
 
-### 2. Make Test File
+Make Test File
 Create a simple text file to test the compression. You can use any text file, or generate one using the command line:
-
 ```bash
 
 echo "This is a test string I Just made." > input.txt
 ```
 
-### 3. Start Compression
+Start Compression
 Run the program with the "-c" flag. This reads your text file and creates a compressed binary file.
-
 ```bash
 
 ./huffman -c input.txt compressed.bin
 ```
 
-### 4. Start Decompression
+Start Decompression
 Run the program with the "-d" flag to reverse the process. This takes the binary file and reconstructs the original text.
 
 ```bash
 
 ./huffman -d compressed.bin restored.txt
 ```
+
